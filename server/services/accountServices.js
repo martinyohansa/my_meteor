@@ -1,14 +1,21 @@
-Meteor.methods({
-	apiLogin: function(credentials) {
-		HTTP.post(baseService.buildAPIURL(),
-		credentials,
+Accounts.registerLoginHandler( function(loginRequest) {
+	console.log(loginRequest[0]);
+	HTTP.call('GET',
+		baseService.buildAPIURL() + '/user/details',
+		{auth: ""},
 		function(err, result){
 			if(err) {
+				console.log(err);
 				//Router.redirect('/sign-up');
 			} else {
-				console.log(credentials,result);
+
 				//Router.redirect('/login');
 			}
-		});
+		}
+	);
+});
+Meteor.methods({
+	apiLogin: function(credentials) {
+
 	}
 })
