@@ -1,0 +1,8 @@
+{
+    "api": {
+        "protocol": "http",
+        "host": "10.0.19.99",
+        "port": "8086",
+        "root": "videohub-api"
+    }
+}
